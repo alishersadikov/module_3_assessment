@@ -10,6 +10,6 @@ class Store
   end
 
   def self.load_stores(parsed)
-    parsed[:stores].map { |raw_store|  Store.new(raw_store) }
+    parsed[:stores].map { |raw_store|  Store.new(raw_store) }.first(15)
   end
 end

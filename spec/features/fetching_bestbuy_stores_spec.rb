@@ -12,12 +12,14 @@ feature "user visits root path" do
         # And I should see exactly 15 results
         # And I should see the long name, city, distance, phone number and store type for each of the 15 results
       visit "/"
+      save_and_open_page
+      fill_in '#search-field', with: "80202"
+      # fill_in '#search-field', with: "80203"
 
-      fill("#search-field"), with: "80202"
-      click "Search"x
 
-      expect(current_path).to eq(search_path)
-      expect(page).to have_content("16 Total Stores")
+      # click "Search"
+      # expect(current_path).to eq(search_path)
+      # expect(page).to have_content("16 Total Stores")
     end
   end
 end
