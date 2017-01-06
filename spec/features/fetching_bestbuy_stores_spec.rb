@@ -14,7 +14,7 @@ feature "user visits root path" do
       visit "/"
 
       fill("#search-field"), with: "80202"
-      click "Search"
+      click "Search"x
 
       expect(current_path).to eq(search_path)
       expect(page).to have_content("16 Total Stores")
