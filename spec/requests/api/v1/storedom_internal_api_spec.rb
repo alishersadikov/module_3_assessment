@@ -52,7 +52,7 @@ describe "storedom endpoints" do
   end
 
   context "DELETE /api/v1/items/1" do
-    xit "deletes a specific item" do
+    it "deletes a specific item" do
       item_1 = Item.create!(
         name: Faker::Commerce.product_name,
         description: Faker::Lorem.paragraph,
