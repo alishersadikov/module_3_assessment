@@ -13,4 +13,8 @@ class Store
   def self.load_stores(parsed)
     parsed[:stores].map { |raw_store|  Store.new(raw_store) }.first(15)
   end
+
+  def self.find_by_id(id)
+    # binding.pry
+  end
 end
