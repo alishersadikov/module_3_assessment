@@ -7,4 +7,10 @@ Rails.application.routes.draw do
   resources :orders, only: [:index, :show]
   resources :users,  only: [:index, :show]
   resources :stores,  only: [:show]
+
+  namespace :api do
+    namespace :v1 do
+      get "items", to: "items#index"
+    end
+  end
 end
