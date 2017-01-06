@@ -1,5 +1,5 @@
 class Store
-  attr_reader :name, :city, :distance, :phone, :type
+  attr_reader :name, :city, :distance, :phone, :type, :id
 
   def initialize(store_data)
     @name = store_data[:longName]
@@ -7,6 +7,7 @@ class Store
     @distance = store_data[:distance]
     @phone = store_data[:phone]
     @type = store_data[:storeType]
+    @id = store_data[:storeId]
   end
 
   def self.load_stores(parsed)

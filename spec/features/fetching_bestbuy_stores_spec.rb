@@ -25,7 +25,13 @@ feature "user visits root path" do
   end
 
   it "they see store hours" do
+    VCR.use_cassette("store_hours") do
+    visit "/"
 
+    fill_in 'zipcode', with: "80202"
+    click_on "Search"
+
+    click_on "Best Buy Mobile - Cherry Creek Shopping Center"
 
 #   As a user
 # After I have searched a zip code for stores
