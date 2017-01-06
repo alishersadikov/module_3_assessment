@@ -81,19 +81,9 @@ describe "storedom endpoints" do
       result = JSON.parse(response.body)
 
       expect(response).to be_success
-      expect(Item.last.name).to eq("Phoenix")
-      expect(result['name']).to eq("Phoenix")
-      expect(result['image_url']).to eq("https://placehold.it/300x300.png/000")
-      expect(result['zip']).to eq("85001")
-      expect(result['description']).to eq("beautiful city")
-
-      get "/api/v1/items/1"
-
-      item = JSON.parse(response.body, symbolize_names: true)
-
-      expect(response).to be_success
-      expect(item[:name]).to eq(item_1.name)
-      expect(item[:description]).to eq(item_1.description)
+      expect(Item.last.name).to eq("item name")
+      expect(result['name']).to eq("item name")
+      expect(result['image_url']).to eq("http://robohash.org/1.png?set=set2&bgset=bg1&size=200x200")
     end
   end
 
